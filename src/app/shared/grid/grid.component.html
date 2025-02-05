@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        @for (card of cards; track card.titulo){
+            
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src={{card.imagen}} class="card-img-top" alt="..."/>
+                  <div class="card-body">
+                    <p class="card-text">{{card.titulo}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-body-secondary">{{card.mins}}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        } @empty {
+            Empty media
+        }
+    </div>
+</div>
