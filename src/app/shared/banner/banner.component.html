@@ -1,9 +1,16 @@
-<div id="carouselExample" class="carousel slide">
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     @for (foto of fotos; track foto.id){
-      <div class="carousel-item active">
-        <img src={{foto.url}} class="d-block w-100" style="height: 600px;" alt="...">
-      </div>
+      @if($index == 1){
+        <div class="carousel-item active">
+          <img src={{foto.url}} class="d-block w-100" style="height: 600px;" alt="...">
+        </div>
+      }@else{
+        <div class="carousel-item">
+          <img src={{foto.url}} class="d-block w-100" style="height: 600px;" alt="...">
+        </div>
+      }
+      
     }@empty{
       empty media
     }
