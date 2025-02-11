@@ -10,5 +10,9 @@ export const routes: Routes = [
     {
         path: 'vistas/tabla-datos',
         component: TablaDatosComponent,
+    },
+    {
+        path: '',
+        redirectTo: 'vistas/home', pathMatch: 'full',
     }
 ];

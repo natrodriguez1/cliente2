@@ -1,1 +1,26 @@
-<p>tabla-datos works!</p>
+<div style="padding: 2%;">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for (card of cards; track card.id){
+                <tr>
+                    <th scope="row">{{card.id}}</th>
+                    <td>{{card.userId}}</td>
+                    <td>{{card.id}}</td>
+                    <td>{{card.title}}</td>
+                    <td>{{card.body}}</td>
+                </tr>
+            }@empty{
+                empty media
+            }
+        
+        </tbody>
+    </table>
+</div>
