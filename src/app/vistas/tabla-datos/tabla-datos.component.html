@@ -1,11 +1,12 @@
-<div style="padding: 2%;">
+<div style="padding: 2.7%; padding-left: 5%; padding-right: 5%;">
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">ID</th>
+            <th scope="col">User ID</th>
+            <th scope="col">Título</th>
+            <!-- <th scope="col">Descripción</th> -->
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -13,10 +14,36 @@
                 <tr>
                     <th scope="row">{{card.id}}</th>
                     <td>{{card.userId}}</td>
-                    <td>{{card.id}}</td>
                     <td>{{card.title}}</td>
-                    <td>{{card.body}}</td>
+                    <td>{{card.title}}</td>
+                    <!-- <td>{{card.body}}</td> -->
+                    <!-- Button trigger modal -->
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Ver más
+                    </button></td>
                 </tr>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{card.title}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                            <div class="modal-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">User ID: {{card.userId}}</li>
+                                    <li class="list-group-item">ID: {{card.id}}</li>
+                                    <li class="list-group-item">Descripción: {{card.body}}</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <br/>
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }@empty{
                 empty media
             }
